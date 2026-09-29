@@ -1,0 +1,267 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.app-shell {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 340px;
+  background: #111827;
+  border-right: 1px solid #1f2937;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.sidebar h1 {
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+
+.repo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.repo-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.repo-form input,
+.repo-form textarea {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  color: #e2e8f0;
+  padding: 8px;
+  font-size: 13px;
+  font-family: monospace;
+  resize: vertical;
+}
+
+.repo-form button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.repo-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-error {
+  color: #f87171;
+  font-size: 12px;
+  word-break: break-word;
+}
+
+.endpoint-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.endpoint-list-header {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.endpoint-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  color: #e2e8f0;
+  font-size: 12px;
+}
+
+.endpoint-item.active {
+  border-color: #2563eb;
+  background: #1e3a8a55;
+}
+
+.endpoint-path {
+  flex: 1;
+  font-family: monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.http-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.http-get {
+  background: #2563eb;
+}
+
+.http-post {
+  background: #059669;
+}
+
+.http-put {
+  background: #d97706;
+}
+
+.http-delete {
+  background: #dc2626;
+}
+
+.http-patch {
+  background: #7c3aed;
+}
+
+.framework-badge {
+  font-size: 10px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.warnings-box {
+  font-size: 12px;
+  color: #fbbf24;
+}
+
+.warnings-box ul {
+  margin: 6px 0 0;
+  padding-left: 16px;
+}
+
+.main-area {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+.canvas-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.canvas-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.flow-node {
+  background: #1f2937;
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 0;
+  width: 200px;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.flow-node-type {
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  letter-spacing: 0.05em;
+}
+
+.flow-node-class {
+  padding: 6px 8px 0;
+  font-weight: 600;
+}
+
+.flow-node-method {
+  padding: 0 8px 6px;
+  color: #94a3b8;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.details-panel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 300px;
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 13px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.details-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.details-panel h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-family: monospace;
+  padding-right: 20px;
+}
+
+.details-row {
+  margin-bottom: 6px;
+}
+
+.details-label {
+  color: #94a3b8;
+  display: inline-block;
+  width: 80px;
+}
+
+.details-summary {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #374151;
+  line-height: 1.4;
+}
